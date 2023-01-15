@@ -5,15 +5,11 @@ import com.qqri.postservice.web.dto.PostsResponseDto;
 import com.qqri.postservice.web.dto.PostsSaveRequestDto;
 import com.qqri.postservice.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/post-service")
 public class PostsApiController {
 
     private final PostsService postsService;
