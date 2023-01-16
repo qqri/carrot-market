@@ -3,8 +3,8 @@ server:
 
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
 
@@ -13,12 +13,58 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
       routes:
         - id: post-service
-          uri: http://localhost:8081/
+          uri: lb://POST-SERVICE
           predicates:
             - Path=/post-service/**
+          filters:
+            - CustomFilter
         - id: user-service
-          uri: http://localhost:8082/
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/user-service/**
+#          filters:
+#            - name: CustomFilter
+#            - name: LoggingFilter
+#              args:
+#                baseMessage: Hi, there
+#                preLogger: true
+#                postLogger: true
+
+#        - id: post-service
+#          uri: http://localhost:8081/
+#          predicates:
+#            - Path=/post-service/**
+#          filters:
+#            - AddRequestHeader=post-req, post-req-service2
+#            - AddResponseHeader=post-res, post-res-service2
+#        - id: user-service
+#          uri: http://localhost:8082/
+#          predicates:
+#            - Path=/user-service/**
+#          filters:
+#            - AddRequestHeader=user-req, user-req-service2
+#            - AddResponseHeader=user-res, user-res-service2
+
+
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "https://localhost:8080"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - DELETE
+#              - PUT
+#              - OPTIONS
+#              - DELETE
+#              - PATCH
+#            allowedHeaders: '*'
+#            allow-credentials: true
