@@ -1,6 +1,5 @@
-package com.qqri.userservice.config.security;
+package com.qqri.userservice.config.jwt;
 
-import com.qqri.userservice.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Builder
 @Entity
-public class User implements UserDetails {
+public class Users implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class User implements UserDetails {
     @Column(length = 100, nullable = false, unique = true)
     private String name;
 
-    @Column(length = 30, nullable = false)
+    @Column(length = 300, nullable = false)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
