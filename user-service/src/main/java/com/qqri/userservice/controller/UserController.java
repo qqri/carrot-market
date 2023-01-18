@@ -21,10 +21,6 @@ public class UserController {
         return "hi user-service~!! ";
     }
 
-
-    private final PasswordEncoder passwordEncoder;
-    private final JwtTokenProvider jwtTokenProvider;
-    private final UserRepository userRepository;
     private final UserService userService;
 
     // 회원가입
