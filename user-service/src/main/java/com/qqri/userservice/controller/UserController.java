@@ -1,12 +1,17 @@
 package com.qqri.userservice.controller;
+import com.qqri.userservice.domain.Users;
+import com.qqri.userservice.dto.UserResponseDto;
 import com.qqri.userservice.dto.UserSaveRequestDto;
 import com.qqri.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
-@RequestMapping("/user-service")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -32,4 +37,16 @@ public class UserController {
     public String test() {
         return "test success";
     }
+
+    @GetMapping("/users/{id}")
+    public ResponseEntity<UserResponseDto> getOneUsers(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByUserId(id));
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponseDto>> getAllUsers() {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByAll());
+    }
+
 }
+

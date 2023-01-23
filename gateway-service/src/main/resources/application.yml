@@ -24,30 +24,30 @@ spring:
           uri: lb://POST-SERVICE
           predicates:
             - Path=/post-service/**
+          filters:
+            - RewritePath=/post-service/(?<segment>.*), /$\{segment}
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user-service/**
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - RewritePath=/order-service/(?<segment>.*), /$\{segment}
 #          filters:
 #            - name: CustomFilter
 #            - name: LoggingFilter
 #              args:
-#                baseMessage: Hi, there
+#                baseMessage: Hi, there 7/
 #                preLogger: true
 #                postLogger: true
 
 #        - id: post-service
-#          uri: http://localhost:8081/
-#          predicates:
-#            - Path=/post-service/**
-#          filters:
-#            - AddRequestHeader=post-req, post-req-service2
-#            - AddResponseHeader=post-res, post-res-service2
-#        - id: user-service
-#          uri: http://localhost:8082/
-#          predicates:
-#            - Path=/user-service/**
-#          filters:
+#          uri: http://localhost:8081/ *
 #            - AddRequestHeader=user-req, user-req-service2
 #            - AddResponseHeader=user-res, user-res-service2
 

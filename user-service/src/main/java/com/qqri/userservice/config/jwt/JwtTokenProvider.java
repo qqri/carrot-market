@@ -45,7 +45,7 @@ public class JwtTokenProvider {
                 // signature 에 들어갈 secret값 세팅
                 .compact();
         System.out.println("jwt 토큰 : "+ "Bearer "+ jwtToken);
-        jwtToken  = "Bearer "+ jwtToken;
+        //jwtToken  = "Bearer "+ jwtToken;
         return jwtToken;
 
     }

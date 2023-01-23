@@ -1,15 +1,19 @@
 package com.qqri.postservice.web;
 
 import com.qqri.postservice.service.PostsService;
+import com.qqri.postservice.web.dto.PostsListResponseDto;
 import com.qqri.postservice.web.dto.PostsResponseDto;
 import com.qqri.postservice.web.dto.PostsSaveRequestDto;
 import com.qqri.postservice.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/post-service")
 public class PostsApiController {
 
     private final PostsService postsService;
@@ -28,4 +32,10 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
+
+    @GetMapping("/posts")
+    public ResponseEntity<List<PostsListResponseDto>> getAllPosts() {
+        return ResponseEntity.status(HttpStatus.OK).body(postsService.findAllDesc());
+    }
+
 }
