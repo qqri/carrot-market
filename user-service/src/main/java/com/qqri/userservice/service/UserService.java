@@ -1,5 +1,6 @@
 package com.qqri.userservice.service;
 
+import com.qqri.userservice.client.OrderServiceClient;
 import com.qqri.userservice.config.jwt.JwtTokenProvider;
 import com.qqri.userservice.domain.UserRepository;
 import com.qqri.userservice.domain.Users;
@@ -23,6 +24,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
+
+    private final OrderServiceClient orderServiceClient;
     public String join(UserSaveRequestDto userSaveRequestDto) {
         userSaveRequestDto.setPassword(passwordEncoder.encode(userSaveRequestDto.getPassword()));
         userRepository.save(userSaveRequestDto.toEntity());
@@ -42,8 +45,10 @@ public class UserService {
     public UserResponseDto getUserByUserId(Long id) {
         Users userEntity = userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("가입되지 않은 ID 입니다."));
-
-        return new UserResponseDto(userEntity);
+        UserResponseDto userResponseDto = new UserResponseDto(userEntity);
+        List<OrderResponseDto> orderList = orderServiceClient.getOrders(id);
+        userResponseDto.setOrders(orderList);
+        return userResponseDto;
     }
 
     @Transactional(readOnly = true)
@@ -52,5 +57,9 @@ public class UserService {
                 .map(UserResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+
+
+
 
 }

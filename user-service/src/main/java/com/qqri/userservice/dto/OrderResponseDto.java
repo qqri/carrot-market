@@ -9,7 +9,7 @@ public class OrderResponseDto {
     private String productId;
     private Integer unitPrice;
     private Integer totalPrice;
-    private Integer qrt;
+    private Integer qty;
     private Date createdAt;
 
     private String orderId;

@@ -16,6 +16,8 @@ public class OrderService {
 
     public String createOrder(Long userId, OrderDto orderDto) {
         orderDto.setOrderId(UUID.randomUUID().toString());
+        System.out.println(orderDto.getUnitPrice());
+        System.out.println(orderDto.getQty());
         orderDto.setTotalPrice(orderDto.getUnitPrice() * orderDto.getQty());
         orderDto.setUserId(userId);
         return ordersRepository.save(orderDto.toEntity()).getOrderId();

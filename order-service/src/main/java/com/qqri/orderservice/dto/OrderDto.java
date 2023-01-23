@@ -1,10 +1,9 @@
 package com.qqri.orderservice.dto;
 
 import com.qqri.orderservice.domain.orders.Orders;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -17,7 +16,8 @@ public class OrderDto {
 
     private String orderId;
     private Long userId;
-
+    @Setter
+    private List<Orders> orderList;
     public OrderDto(Orders entity) {
         this.orderId = entity.getOrderId();
         this.productId = entity.getProductId();
