@@ -1,5 +1,4 @@
 package com.qqri.userservice.controller;
-import com.qqri.userservice.domain.Users;
 import com.qqri.userservice.dto.UserResponseDto;
 import com.qqri.userservice.dto.UserReviewScoreRequestDto;
 import com.qqri.userservice.dto.UserSaveRequestDto;
@@ -9,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.Path;
 import java.util.List;
 
 

@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2d8e2da-c970-46b6-abbd-d02874253f9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/src/main/java/com/qqri/website/controller/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/qqri/postservice/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/qqri/postservice/web/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/static/js/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/static/js/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/templates/index.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/templates/index.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/templates/layout/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/templates/layout/header.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/templates/posts-save.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/templates/posts-save.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/templates/posts-update.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/templates/posts-update.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/carrot-market/discovery-server"
+    "last_opened_file_path": "D:/carrot-market/order-service"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -51,6 +41,7 @@
       <workItem from="1673442388439" duration="394000" />
       <workItem from="1673768691104" duration="753000" />
       <workItem from="1673772225961" duration="824000" />
+      <workItem from="1675049864082" duration="471000" />
     </task>
     <servers />
   </component>

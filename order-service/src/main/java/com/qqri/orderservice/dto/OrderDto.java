@@ -21,10 +21,7 @@ public class OrderDto {
     public OrderDto(Orders entity) {
         this.orderId = entity.getOrderId();
         this.productId = entity.getProductId();
-        this.qty = entity.getQty();
         this.totalPrice = entity.getTotalPrice();
-        this.unitPrice = entity.getUnitPrice();
-        this.userId = entity.getUserId();
     }
 
     public OrderDto(OrderRequestDto requestDto) {
@@ -46,11 +43,8 @@ public class OrderDto {
     public Orders toEntity(){
         return Orders.builder()
                 .productId(productId)
-                .qty(qty)
                 .orderId(orderId)
                 .totalPrice(totalPrice)
-                .unitPrice(unitPrice)
-                .userId(userId)
                 .build();
     }
 

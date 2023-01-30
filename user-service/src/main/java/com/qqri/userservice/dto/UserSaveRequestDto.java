@@ -1,6 +1,6 @@
 package com.qqri.userservice.dto;
 
-import com.qqri.userservice.domain.Users;
+import com.qqri.userservice.domain.users.Users;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

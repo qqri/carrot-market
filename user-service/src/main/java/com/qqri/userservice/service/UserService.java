@@ -2,8 +2,8 @@ package com.qqri.userservice.service;
 
 import com.qqri.userservice.client.OrderServiceClient;
 import com.qqri.userservice.config.jwt.JwtTokenProvider;
-import com.qqri.userservice.domain.UserRepository;
-import com.qqri.userservice.domain.Users;
+import com.qqri.userservice.domain.users.UserRepository;
+import com.qqri.userservice.domain.users.Users;
 import com.qqri.userservice.client.dto.OrderResponseDto;
 import com.qqri.userservice.dto.UserResponseDto;
 import com.qqri.userservice.dto.UserReviewScoreRequestDto;

@@ -1,4 +1,4 @@
-package com.qqri.userservice.domain;
+package com.qqri.userservice.domain.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

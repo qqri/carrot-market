@@ -2,7 +2,7 @@ package com.qqri.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.qqri.userservice.client.dto.OrderResponseDto;
-import com.qqri.userservice.domain.Users;
+import com.qqri.userservice.domain.users.Users;
 import lombok.Data;
 import lombok.Setter;
 

@@ -1,7 +1,6 @@
 package com.qqri.userservice.service;
 
-import com.qqri.userservice.client.OrderServiceClient;
-import com.qqri.userservice.domain.UserRepository;
+import com.qqri.userservice.domain.users.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
