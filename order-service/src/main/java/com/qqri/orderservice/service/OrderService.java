@@ -29,7 +29,11 @@ public class OrderService {
         return new OrderDto(entity);
     }
 
-    public List<Orders> findByUserId(Long userId) {
-        return ordersRepository.findByUserId(userId);
+    public List<Orders> findBySellerId(String sellerId) {
+        return ordersRepository.findBySellerId(sellerId);
+    }
+
+    public List<Orders> findByBuyerId(String buyerId) {
+        return ordersRepository.findByBuyerId(buyerId);
     }
 }

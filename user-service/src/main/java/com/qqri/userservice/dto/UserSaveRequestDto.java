@@ -25,6 +25,7 @@ public class UserSaveRequestDto {
         return Users.builder()
                 .name(name)
                 .password(password)
+                .temperature(36.5) //처음엔 36.5
                 .roles(Collections.singletonList("ROLE_USER"))
                 .build();
     }

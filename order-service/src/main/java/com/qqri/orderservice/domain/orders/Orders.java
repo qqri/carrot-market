@@ -24,16 +24,13 @@ public class Orders{
     private String productId;
 
     @Column(nullable = false)
-    private Integer qty;
-
-    @Column(nullable = false)
-    private Integer unitPrice;
-
-    @Column(nullable = false)
     private Integer totalPrice;
 
     @Column(nullable = false)
-    private Long userId;
+    private String sellerId;
+
+    @Column(nullable = false)
+    private String buyerId;
 
     @Column(nullable = false, unique = true)
     private String orderId;
@@ -43,13 +40,12 @@ public class Orders{
     private Date createdAt;
 
     @Builder
-    public Orders(Long id, String productId, Integer qty, Integer unitPrice, Integer totalPrice, Long userId, String orderId, Date createdAt) {
+    public Orders(Long id, String productId, Integer totalPrice, String sellerId,String buyerId, String orderId, Date createdAt) {
         this.id = id;
         this.productId = productId;
-        this.qty = qty;
-        this.unitPrice = unitPrice;
         this.totalPrice = totalPrice;
-        this.userId = userId;
+        this.sellerId = sellerId;
+        this.buyerId = buyerId;
         this.orderId = orderId;
         this.createdAt = createdAt;
     }

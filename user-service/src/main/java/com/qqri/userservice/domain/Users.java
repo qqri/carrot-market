@@ -24,12 +24,13 @@ public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(length = 100, nullable = false, unique = true)
     private String name;
 
     @Column(length = 300, nullable = false)
     private String password;
+    @Column
+    private double temperature;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
@@ -65,5 +66,18 @@ public class Users implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void updateTemp(int score) {
+        switch (score){
+            case 1:
+                this.temperature -= 0.3;
+                break;
+            case 3:
+                this.temperature += 03;
+                break;
+            default:
+                break;
+        }
     }
 }

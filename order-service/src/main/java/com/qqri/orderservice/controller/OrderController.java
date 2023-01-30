@@ -33,9 +33,14 @@ public class OrderController {
         return orderService.findByOrderId(orderId);
     }
 
-    @GetMapping("/orders/user/{userId}")
-    public ResponseEntity<List<Orders>> getAllOrder(@PathVariable Long userId) {
-        return ResponseEntity.status(HttpStatus.OK).body(orderService.findByUserId(userId));
+    @GetMapping("/orders/seller/{sellerId}")
+    public ResponseEntity<List<Orders>> getAllSellerOrder(@PathVariable String sellerId) {
+        return ResponseEntity.status(HttpStatus.OK).body(orderService.findBySellerId(sellerId));
+    }
+
+    @GetMapping("/orders/buyer/{buyerId}")
+    public ResponseEntity<List<Orders>> getAllBuyerOrder(@PathVariable String buyerId) {
+        return ResponseEntity.status(HttpStatus.OK).body(orderService.findByBuyerId(buyerId));
     }
 
 }

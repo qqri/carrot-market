@@ -1,9 +1,8 @@
 package com.qqri.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.qqri.userservice.client.dto.OrderResponseDto;
 import com.qqri.userservice.domain.Users;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.Setter;
 
@@ -16,10 +15,12 @@ import java.util.List;
 public class UserResponseDto {
     private String name;
 
-    private List<OrderResponseDto> orders;
+    private List<OrderResponseDto> sellList;
+    private List<OrderResponseDto> buyList;
 
     public UserResponseDto(Users entity) {
         this.name = entity.getName();
-        this.orders = new ArrayList<OrderResponseDto>();
+        this.sellList = new ArrayList<OrderResponseDto>();
+        this.buyList = new ArrayList<OrderResponseDto>();
     }
 }
